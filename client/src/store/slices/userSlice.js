@@ -34,9 +34,13 @@ const userSlice = createSlice({
     setCheckTokenLoading: (state, action) => {
       state.checkTokenLoading = action.payload;
     },
+
+    updateUser: (state, action) => {
+      state.user = { ...state.user, ...action.payload };
+    },
   },
 });
 
-export const { setToken, logout, setCheckTokenLoading } = userSlice.actions;
+export const { setToken, logout, setCheckTokenLoading, updateUser } = userSlice.actions;
 
 export default userSlice.reducer;

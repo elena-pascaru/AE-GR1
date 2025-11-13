@@ -2,6 +2,7 @@
 import axiosNoAuth from "../axios/axiosNoAuth";
 import axiosAuth from "../axios/axiosAuth";
 
+// GET all the products
 export const fetchProducts = async () => {
   try {
     const response = await axiosNoAuth.get('products');
@@ -12,6 +13,7 @@ export const fetchProducts = async () => {
   }
 };
 
+// GET the product by ID
 export const getProductById = async (id) => {
   try {
     const response = await axiosNoAuth.get(`products/${id}`);
@@ -22,6 +24,7 @@ export const getProductById = async (id) => {
   }
 };
 
+// CREATE product
 export const createProduct = async (productData) => {
   try {
     const response = await axiosAuth.post('products', productData);
@@ -32,6 +35,8 @@ export const createProduct = async (productData) => {
   }
 };
 
+
+// UPDATE product
 export const updateProduct = async (id, productData) => {
   try {
     const response = await axiosAuth.put(`products/${id}`, productData);
@@ -42,6 +47,7 @@ export const updateProduct = async (id, productData) => {
   }
 };
 
+// DELETE Product
 export const deleteProduct = async (id) => {
   try {
     const response = await axiosAuth.delete(`products/${id}`);

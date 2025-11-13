@@ -2,6 +2,7 @@
 const { sequelize } = require('../Server');
 const { DataTypes } = require('sequelize');
 
+
 const User = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
@@ -32,5 +33,6 @@ const User = sequelize.define('User', {
   createdAt: 'created_at',
   updatedAt: 'updated_at',
 });
+
 
 module.exports = User;

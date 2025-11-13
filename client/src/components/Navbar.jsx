@@ -9,6 +9,7 @@ import { classNames } from '../utils/tailwind'
 const navigation = [
   { name: 'Homepage', href: '/' },
   { name: 'Products', href: '/products' },
+  { name: 'Shopping Cart', href: '/cart' }
 ]
 
 export default function Navbar() {
@@ -81,22 +82,28 @@ export default function Navbar() {
                 transition
                 className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg outline outline-black/5 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
               >
+
+                {/* Profile info */}
                 <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+                  <button
+                    onClick={() => navigate("/profile")}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Your profile
-                  </a>
+                  </button>
                 </MenuItem>
+
+                {/* Edit profile */}
                 <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+                  <button
+                    onClick={() => navigate("/profile/edit")}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden hover:bg-gray-100"
                   >
                     Settings
-                  </a>
+                  </button>
                 </MenuItem>
+
+                {/* Log in/out */}
                 <MenuItem>
                   <button
                     onClick={handleAuthClick}
